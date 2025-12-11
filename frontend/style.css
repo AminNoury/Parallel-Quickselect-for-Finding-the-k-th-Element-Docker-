@@ -1,0 +1,85 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e2f;
+    color: #eee;
+    margin: 20px;
+}
+
+input, button {
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.array-container, .steps-container {
+    margin-top: 15px;
+}
+
+.array-box, .sorted-array {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.array-box span, .sorted-array span {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 3px;
+    background-color: #5dade2; /* رنگ ملایم آبی برای سلول‌ها */
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.step {
+    margin-bottom: 15px;
+    border-left: 4px solid #3498db;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 8px;
+}
+
+.worker-box {
+    background-color: rgba(93, 173, 226, 0.2); /* آبی ملایم برای worker‌ها */
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 6px;
+}
+
+.step h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+}
+
+.step.final {
+    font-size: 18px;
+    color: #ffd700;
+    border-left-color: #5dade2;
+}
+
+.kth-element {
+    background-color: #ff6f61 !important; /* برجسته برای k-امین عنصر */
+    color: #fff;
+    font-size: 24px;      /* بزرگ‌تر شدن فونت */
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 6px;
+    box-shadow: 0 0 12px #ff6f61;
+    transition: transform 0.3s;
+}
+
+.kth-element:hover {
+    transform: scale(1.2);  /* وقتی موس روش بره کمی بزرگ‌تر شود */
+}

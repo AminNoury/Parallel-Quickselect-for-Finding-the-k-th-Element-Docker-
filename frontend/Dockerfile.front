@@ -1,0 +1,11 @@
+# استفاده از Nginx سبک برای سرو فایل‌های استاتیک
+FROM nginx:alpine
+
+# کپی فایل HTML به مسیر پیش‌فرض Nginx
+COPY index.html /usr/share/nginx/html/index.html
+
+# expose پورت 80 برای دسترسی مرورگر
+EXPOSE 80
+
+# دستور پیش‌فرض Nginx
+CMD ["nginx", "-g", "daemon off;"]
