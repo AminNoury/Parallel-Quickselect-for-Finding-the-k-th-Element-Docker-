@@ -1,0 +1,53 @@
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyt
+*.env
+*.venv
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+*.sqlite3
+
+# =====================
+# Docker
+# =====================
+*.log
+docker-compose.override.yml
+*.pid
+*.swp
+*.tmp
+*.bak
+
+# =====================
+# IDEs & Editors
+# =====================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.iml
+
+# =====================
+# Node / Frontend
+# =====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tsbuildinfo
+*.cache/
+dist/
+build/
+*.loc*
