@@ -34,12 +34,14 @@ The project also includes a **Frontend visualization** to show each step of the 
 ```bash
 git clone <your-repo-url>
 cd <your-repo-folder>
----
+```
 
+## Build Docker
 2 . **Build and start Docker containers**
 
+```bash
 docker compose up --build
-
+```
 
 Build the Coordinator and Worker Docker images
 
@@ -47,11 +49,14 @@ Start the Coordinator on port 8000
 
 Start Workers in separate containers
 
+
 3. **Access the Frontend**
 
 Once Docker is running, open your browser and go to:
 
+```bash
 http://localhost:8080
+```
 
 
 
@@ -98,5 +103,6 @@ Notes
     The number of Workers can be adjusted in the docker-compose.yml.
 
     This project demonstrates parallel processing with Docker for selection algorithms.
+
 
 
