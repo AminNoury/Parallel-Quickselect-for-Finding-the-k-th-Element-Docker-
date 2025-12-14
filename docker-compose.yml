@@ -50,7 +50,7 @@
 #       - "8080:80"
 #     depends_on:
 #       - coordinator
-version: "3.9"
+# version: "3.9"
 
 services:
 
