@@ -8,6 +8,30 @@ startBtn.addEventListener("click", async () => {
     const size = parseInt(arraySizeInput.value);
     const k = parseInt(kInput.value);
 
+
+
+    // ---- VALIDATION ----
+    if (isNaN(size) || size < 4 || size > 1000) {
+        alert("Array size must be between 4 and 1000.");
+        return;
+    }
+
+    if (isNaN(k) || k < 1 || k >= size) {
+    alert("k must be at least 1 and smaller than array size.");
+    return;
+    }
+
+    // if (isNaN(size) || size < 4) {
+    //     alert("Array size must be at least 4 (because we use 4 chunks).");
+    //     return;
+    // }
+
+    // if (isNaN(k) || k < 1 || k >= size) {
+    //     alert("k must be at least 1 and strictly less than array size (k < n).");
+    //     return;
+    // }
+
+
     const originalArr = Array.from({length: size}, () => Math.floor(Math.random() * 100) + 1);
     let arr = originalArr.slice();
     let currentK = k;

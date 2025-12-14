@@ -86,6 +86,16 @@ def quickselect_parallel(arr: list[int], k: int):
     if not arr or not 1 <= k <= len(arr):
         raise ValueError("Invalid array or k")
 
+    if not arr or len(arr) < 4:
+        raise ValueError("Array size must be at least 4 (4 chunks required)")
+
+    if k < 1 or k >= len(arr):
+        raise ValueError("k must satisfy 1 ≤ k < len(array)")
+
+    if not all(isinstance(x, int) for x in arr):
+        raise ValueError("Array elements must be integers")
+
+
     steps = []
     step_number = 1
     original_arr = arr[:]
