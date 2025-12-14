@@ -1,51 +1,124 @@
+# services:
+#   coordinator:
+#     build:
+#       context: ./coordinator
+#       dockerfile: Dockerfile.coordinator
+#     depends_on:
+#       - worker-1
+#       - worker-2
+#       - worker-3
+#       - worker-4
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - ./frontend:/app/frontend
+#     entrypoint: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
+
+#   worker-1:
+#     build:
+#       context: ./worker
+#       dockerfile: Dockerfile.worker
+#     ports:
+#       - "8001:8000"
+
+#   worker-2:
+#     build:
+#       context: ./worker
+#       dockerfile: Dockerfile.worker
+#     ports:
+#       - "8002:8000"
+
+#   worker-3:
+#     build:
+#       context: ./worker
+#       dockerfile: Dockerfile.worker
+#     ports:
+#       - "8003:8000"
+
+#   worker-4:
+#     build:
+#       context: ./worker
+#       dockerfile: Dockerfile.worker
+#     ports:
+#       - "8004:8000"
+
+#   frontend:
+#     build:
+#       context: ./frontend
+#       dockerfile: Dockerfile.front
+#     ports:
+#       - "8080:80"
+#     depends_on:
+#       - coordinator
+version: "3.9"
+
 services:
+
   coordinator:
     build:
       context: ./coordinator
       dockerfile: Dockerfile.coordinator
-    depends_on:
-      - worker-1
-      - worker-2
-      - worker-3
-      - worker-4
+    container_name: coordinator
     ports:
       - "8000:8000"
+    depends_on:
+      - worker1
+      - worker2
+      - worker3
+      - worker4
+    environment:
+      - WORKER1_URL=http://worker1:8000
+      - WORKER2_URL=http://worker2:8000
+      - WORKER3_URL=http://worker3:8000
+      - WORKER4_URL=http://worker4:8000
     volumes:
       - ./frontend:/app/frontend
-    entrypoint: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
 
-  worker-1:
+  worker1:
     build:
       context: ./worker
       dockerfile: Dockerfile.worker
+    container_name: worker1
     ports:
       - "8001:8000"
+    environment:
+      - WORKER_ID=1
 
-  worker-2:
+  worker2:
     build:
       context: ./worker
       dockerfile: Dockerfile.worker
+    container_name: worker2
     ports:
       - "8002:8000"
+    environment:
+      - WORKER_ID=2
 
-  worker-3:
+  worker3:
     build:
       context: ./worker
       dockerfile: Dockerfile.worker
+    container_name: worker3
     ports:
       - "8003:8000"
+    environment:
+      - WORKER_ID=3
 
-  worker-4:
+  worker4:
     build:
       context: ./worker
       dockerfile: Dockerfile.worker
+    container_name: worker4
     ports:
       - "8004:8000"
+    environment:
+      - WORKER_ID=4
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile.front
+    container_name: frontend
     ports:
       - "8080:80"
     depends_on:
