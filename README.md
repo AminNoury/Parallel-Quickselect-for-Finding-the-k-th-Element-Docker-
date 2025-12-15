@@ -4,7 +4,7 @@ This project implements the Parallel Quickselect algorithm to efficiently find t
 # Parallel Quickselect for Finding the k-th Element (Docker)
 
 ## Contributors
-- **Supervisor:** Dr. Javad Mohammad Zadeh
+- **Academic Supervisor:** Dr. Javad Mohammad Zadeh
 - **Developer:** Amin Nouri
 - **Special Thanks:** Navid Tavasoli
 
